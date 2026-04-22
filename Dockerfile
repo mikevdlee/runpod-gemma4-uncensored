@@ -4,13 +4,13 @@
 # Modified: Uses vLLM nightly (0.19+) for Gemma4ReasoningParser support
 # =============================================================================
 
-FROM nvidia/cuda:12.9.1-base-ubuntu22.04
+FROM nvidia/cuda:12.1.1-base-ubuntu22.04
 
 RUN apt-get update -y \
     && apt-get install -y python3-pip git \
     && rm -rf /var/lib/apt/lists/*
 
-RUN ldconfig /usr/local/cuda-12.9/compat/
+RUN ldconfig /usr/local/cuda-12.1/compat/
 
 # =============================================================================
 # KEY CHANGE: Install vLLM nightly (includes Gemma4ReasoningParser)
