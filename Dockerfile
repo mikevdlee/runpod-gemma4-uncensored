@@ -18,6 +18,7 @@ RUN ldconfig /usr/local/cuda-12.1/compat/
 # include the gemma4 reasoning parser. We need vLLM 0.19+ for that.
 # =============================================================================
 RUN python3 -m pip install --upgrade pip && \
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 && \
     pip install -U vllm --pre \
         --index-url https://pypi.org/simple \
         --extra-index-url https://wheels.vllm.ai/nightly && \
